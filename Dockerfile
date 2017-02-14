@@ -1,5 +1,8 @@
 FROM erochest/omeka
 
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes install phpunit
+RUN DEBIAN_FRONTEND=noninteractive apt-get clean
+
 ADD ./Neatline /app/Omeka/plugins/Neatline
 ADD ./NeatlineSIMILE /app/Omeka/plugins/NeatlineSIMILE
 ADD ./NeatlineText /app/Omeka/plugins/NeatlineText
